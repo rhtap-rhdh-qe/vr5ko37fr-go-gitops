@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: vr5ko37fr-go-gitops
+  description: This is GitOps manifest for vr5ko37fr-go   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=vr5ko37fr-go
+    backstage.io/kubernetes-id: vr5ko37fr-go 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: vr5ko37fr-go
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:vr5ko37fr-go
